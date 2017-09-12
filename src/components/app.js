@@ -5,8 +5,8 @@ angular.module('video-player')
   controller: function(youTube) {
     this.videos = null;
     this.currentVid = null;
+    
     this.selectVideo = function(video) {
-      //this.currentVid = video;
       this.currentVid = video;
     }.bind(this);
     
@@ -17,36 +17,11 @@ angular.module('video-player')
     
     this.$onInit = function() {
       youTube.search('football', this.youTubeCallback);   
-      // var resolve = function(videos) {
-      //   this.currentVid = videos[0];  
-      // };
-      // var reject = function() {
-      //   console.log('FAIL');
-      // };
-      // console.log('here');
-      // var promise = new Promise(function(resolve, reject) {
-      // // do a thing, possibly async, then…
-      //   youTube.search('football', this.youTubeCallback);   
-      //   if (this.videos) {
-      //     console.log(this.videos); 
-      //     resolve(this.videos);
-      //   } else {
-      //     reject();
-      //   }
-      // });
-      // promise();
     };
     
-   
-    
-    
-      
-      
-      
-     
-    //   this.currentVid = this.videos[0];
-    // };
-    // this.searchResults = function() {};
+    this.onSearch = function(searchQuery) {
+      youTube.search(searchQuery, this.youTubeCallback);
+    }.bind(this);
   },
 
   templateUrl: 'src/templates/app.html'
