@@ -7,7 +7,7 @@ angular.module('video-player')
     selectVideo: '<'
   },
 
-  controller: function($scope) {
+  controller: function() {
     this.$onInit = function() {
       this.clickMe = function() {
         this.selectVideo(this.video);

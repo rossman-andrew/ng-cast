@@ -6,7 +6,7 @@ angular.module('video-player')
     selectVideo: '<'
   },
 
-  controller: function($scope) {
+  controller: function() {
   },
 
   templateUrl: 'src/templates/videoList.html'
