@@ -4,10 +4,19 @@ angular.module('video-player')
   // TODO
   bindings: {
     video: '<',
-    selectVideo: '&'
+    selectVideo: '<'
   },
 
-  controller: function() {
+  controller: function($scope) {
+    this.$onInit = function() {
+      this.clickMe = function() {
+        this.selectVideo(this.video);
+      };
+    };
+    // this.clickMe = function() {
+    //   this.selectVideo(this.video);
+    // };
+    
     
   },
 

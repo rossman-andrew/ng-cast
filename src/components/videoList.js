@@ -3,11 +3,10 @@ angular.module('video-player')
   // TODO
   bindings: {
     videos: '<',
-    selectVideo: '&'
+    selectVideo: '<'
   },
 
-  controller: function() {
-    
+  controller: function($scope) {
   },
 
   templateUrl: 'src/templates/videoList.html'

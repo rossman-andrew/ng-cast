@@ -6,9 +6,16 @@ angular.module('video-player')
     currentVid: '<'
   },
   
-  controller: function() {
+  controller: function($scope) {
     this.videoSrc = function() {
       return 'https://www.youtube.com/embed/' + this.currentVid.id.videoId;
+    };
+    
+    this.videoTitle = function() {
+      return this.currentVid.snippet.title;
+    };
+    this.videoDescription = function() {
+      return this.currentVid.snippet.description;
     };
   },
 
